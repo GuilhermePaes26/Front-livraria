@@ -15,7 +15,7 @@ export default function BookForm() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:8000/api/book/${id}`)
+      fetch(`https://webapptech.site/apilivraria/api/book/${id}`)
         .then(res => res.json())
         .then(data => setFormData(data));
     }
@@ -25,8 +25,8 @@ export default function BookForm() {
     e.preventDefault();
     const method = id ? "PUT" : "POST";
     const url = id
-      ? `http://localhost:8000/api/book/${id}`
-      : "http://localhost:8000/api/book";
+      ? `https://webapptech.site/apilivraria/api/book/${id}`
+      : "https://webapptech.site/apilivraria/api/book";
 
     await fetch(url, {
       method,

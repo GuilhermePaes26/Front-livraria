@@ -9,7 +9,7 @@ export default function Home() {
 
   const fetchBooks = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/book");
+      const res = await fetch("https://webapptech.site/apilivraria/api/book");
       const data = await res.json();
       setBooks(data);
     } catch (error) {
@@ -23,7 +23,7 @@ export default function Home() {
 
   const handleDelete = async (id) => {
     if (window.confirm("Deseja realmente excluir este livro?")) {
-      await fetch(`http://localhost:8000/api/book/${id}`, {
+      await fetch(`https://webapptech.site/apilivraria/api/book/${id}`, {
         method: "DELETE"
       });
       fetchBooks(); 
